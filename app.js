@@ -1,12 +1,14 @@
-var express = require("express");
-var app = express();
-var bodyparser = require("body-parser");
-var cors = require("cors");
-var url = bodyparser.urlencoded({ extended: false });
-var port = process.env.PORT || 3000;
-app.listen(port);
-app.use(bodyparser.json());
+var express=require("express");
+var cors=require("cors");
+var bp=require("body-parser");
+const bodyParser = require("body-parser");
+
+var app=express();
 app.use(cors());
+var url=bodyParser.urlencoded({extended:false});
+app.use(bodyParser.json());
+var port=process.env.PORT||3000;
+app.listen(port);
 app.post('/bfhl', url, function (req, res) {
     s = false;
     name = "garima_mehta_20032001";
